@@ -1,4 +1,5 @@
 package com.edutech.progressive.jwt;
+
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -23,7 +24,7 @@ public class JwtUtil {
         this.supplierRepository = supplierRepository;
     }
 
-    private final String secret = "secretkey";
+    private final String secret = "secretKey";
 
     private final int expiration = 86400;
 

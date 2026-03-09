@@ -43,7 +43,7 @@ public class ProductController {
         }
     }
  
-    @PostMapping
+   @PostMapping
     public ResponseEntity<?> addProduct(@RequestBody Product product) {
         try {
             int productId = productServiceImplJpa.addProduct(product);
@@ -54,8 +54,7 @@ public class ProductController {
             // Return a generic error message for any other exceptions
             return new ResponseEntity<>("An unexpected error occurred: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
-    }
- 
+    } 
     @PutMapping("/{productId}")
     public ResponseEntity<Void> updateProduct(@PathVariable int productId, @RequestBody Product product) {
         try {

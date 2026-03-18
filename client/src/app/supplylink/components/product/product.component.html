@@ -2,6 +2,7 @@
   <h2>Product Management</h2>
 
   <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+
     <!-- Product ID -->
     <div class="form-control">
       <label>Product ID</label>
@@ -11,16 +12,24 @@
     <!-- Warehouse ID -->
     <div class="form-control">
       <label>Warehouse ID</label>
-      <input type="number" formControlName="warehouseId">
+      <input
+        type="number"
+        formControlName="warehouseId"
+        required
+      >
       <div *ngIf="productForm.get('warehouseId')?.invalid && productForm.get('warehouseId')?.touched">
-        <small>Warehouse ID is required and must be greater than 0.</small>
+        <small>Warehouse ID is required.</small>
       </div>
     </div>
 
     <!-- Product Name -->
     <div class="form-control">
       <label>Product Name</label>
-      <input type="text" formControlName="productName">
+      <input
+        type="text"
+        formControlName="productName"
+        required
+      >
       <div *ngIf="productForm.get('productName')?.invalid && productForm.get('productName')?.touched">
         <small>Product Name is required.</small>
       </div>
@@ -29,13 +38,20 @@
     <!-- Product Description -->
     <div class="form-control">
       <label>Product Description</label>
-      <textarea formControlName="productDescription"></textarea>
+      <textarea
+        formControlName="productDescription"
+        required
+      ></textarea>
     </div>
 
     <!-- Quantity -->
     <div class="form-control">
       <label>Quantity</label>
-      <input type="number" formControlName="quantity">
+      <input
+        type="number"
+        formControlName="quantity"
+        required
+      >
       <div *ngIf="productForm.get('quantity')?.invalid && productForm.get('quantity')?.touched">
         <small>Quantity is required and cannot be negative.</small>
       </div>
@@ -44,13 +60,21 @@
     <!-- Price -->
     <div class="form-control">
       <label>Price</label>
-      <input type="number" formControlName="price">
+      <input
+        type="number"
+        formControlName="price"
+        required
+      >
       <div *ngIf="productForm.get('price')?.invalid && productForm.get('price')?.touched">
         <small>Price is required and must be greater than 0.</small>
       </div>
     </div>
 
-    <!-- Submit Button -->
-    <button type="submit" [disabled]="productForm.invalid">Submit</button>
+    <!-- Submit -->
+    <button type="submit" [disabled]="productForm.invalid">
+      Submit
+    </button>
+
   </form>
 </div>
+``
